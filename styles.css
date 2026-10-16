@@ -1,0 +1,341 @@
+:root {
+  --bg: #f4efe6;
+  --ink: #0f1c17;
+  --muted: #4b5a53;
+  --line: #d5cdc0;
+  --accent: #1f6b4a;
+  --accent-ink: #f4efe6;
+  --card: #fffaf3;
+  --header: rgba(244, 239, 230, 0.88);
+  --max: 72rem;
+  --font: "IBM Plex Sans", system-ui, sans-serif;
+  --display: "Fraunces", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 0.5rem 0.75rem;
+  z-index: 20;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.5rem;
+  background: var(--header);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.03em;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--accent);
+}
+
+.nav-toggle {
+  display: none;
+  font: inherit;
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.92rem;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn-ghost {
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+}
+
+.hero,
+.section,
+.site-footer {
+  width: min(var(--max), calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.hero {
+  padding: 5.5rem 0 4rem;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 4.5rem;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  font-weight: 550;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  line-height: 0.95;
+  margin: 0 0 1.25rem;
+}
+
+.lede {
+  max-width: 38rem;
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin: 0 0 1.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 0;
+}
+
+.facts dt {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.facts dd {
+  margin: 0.25rem 0 0;
+  font-size: 1.05rem;
+}
+
+.section {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: 4.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0 0 2rem;
+}
+
+.job,
+.edu,
+.project {
+  margin-bottom: 2.25rem;
+}
+
+.job header,
+.edu {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.job h3,
+.edu h3,
+.project h3,
+.skill-grid h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.org {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+}
+
+.when {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.job ul {
+  margin: 0.85rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--ink);
+}
+
+.job li + li {
+  margin-top: 0.45rem;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-grid > div {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 1.1rem 1.15rem;
+}
+
+.skill-grid p {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+}
+
+.aws-note,
+.coursework {
+  color: var(--muted);
+  margin: 1.5rem 0 0;
+}
+
+.project {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 1.5rem;
+}
+
+.project p {
+  margin: 0.6rem 0 0;
+  max-width: 42rem;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  font-size: 1.15rem;
+}
+
+.contact-list li + li {
+  margin-top: 0.4rem;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.5rem 0 2.5rem;
+  color: var(--muted);
+}
+
+.site-footer a {
+  color: var(--muted);
+}
+
+@media (max-width: 800px) {
+  .skill-grid,
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav ul {
+    display: none;
+    position: absolute;
+    right: 1.5rem;
+    top: 3.4rem;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--line);
+    padding: 0.85rem 1.1rem;
+    min-width: 10rem;
+  }
+
+  .nav.is-open ul {
+    display: flex;
+  }
+
+  .site-header .btn-ghost {
+    display: none;
+  }
+}
